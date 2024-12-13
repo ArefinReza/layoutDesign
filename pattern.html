@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation with JavaScript</title>
+    <style>
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+<form id="myForm">
+    <label for="email">Email:</label>
+    <input type="email" id="email" placeholder="example@example.com" required>
+    <span class="error" id="emailError"></span>
+
+    <br><br>
+
+    <label for="phone">Phone Number:</label>
+    <input type="text" id="phone" placeholder="123-456-7890" required>
+    <span class="error" id="phoneError"></span>
+
+    <br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" placeholder="Strong Password" required>
+    <span class="error" id="passwordError"></span>
+
+    <br><br>
+
+    <input type="submit" value="Submit">
+</form>
+
+<script>
+    document.getElementById('myForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form submission for validation
+
+        // Clear previous error messages
+        document.getElementById('emailError').innerText = '';
+        document.getElementById('phoneError').innerText = '';
+        document.getElementById('passwordError').innerText = '';
+
+        let isValid = true;
+
+        // Email Validation
+        const email = document.getElementById('email').value;
+        const emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+        if (!emailPattern.test(email)) {
+            document.getElementById('emailError').innerText = 'Invalid email format.';
+            isValid = false;
+        }
+
+        // Phone Number Validation
+        const phone = document.getElementById('phone').value;
+        const phonePattern = /^\d{3}-\d{3}-\d{4}$/;
+        if (!phonePattern.test(phone)) {
+            document.getElementById('phoneError').innerText = 'Phone number must be in the format 123-456-7890.';
+            isValid = false;
+        }
+
+        // Password Validation
+        const password = document.getElementById('password').value;
+        const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+        if (!passwordPattern.test(password)) {
+            document.getElementById('passwordError').innerText = 'Password must be at least 8 characters long and include uppercase, lowercase, number, and special character.';
+            isValid = false;
+        }
+
+        // If all validations pass, submit the form
+        if (isValid) {
+            alert('Form submitted successfully!');
+            // You can submit the form here using AJAX or any other method
+            // this.submit(); // Uncomment this line to actually submit the form
+        }
+    });
+</script>
+
+</body>
+</html>

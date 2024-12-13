@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <style>
+        /* Ensure the carousel maintains a consistent height */
+        #carouselExampleFade {
+          height: 500px; /* Set a fixed height for the carousel */
+          position: relative;
+        }
+      
+        #carouselExampleFade .carousel-inner {
+          height: 100%; /* Ensure the inner content fills the carousel height */
+        }
+      
+        #carouselExampleFade .carousel-item {
+          height: 100%; /* Ensure each item fills the height */
+          position: relative;
+        }
+      
+        #carouselExampleFade .carousel-item img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover; /* Make sure the image covers the container */
+          filter: brightness(50%); /* Darken the image */
+        }
+      
+        #carouselExampleFade .carousel-caption {
+          position: absolute;
+          left: 10%;
+          top: 50%; 
+          transform: translateY(-50%); 
+          z-index: 2; 
+          color: #fff;
+          text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+          max-width: 40%; 
+        }
+      
+        #carouselExampleFade .carousel-caption h1 {
+          font-size: 2.5rem;
+          font-weight: bold;
+        }
+      
+        #carouselExampleFade .carousel-caption p {
+          font-size: 1.2rem;
+          margin: 10px 0;
+        }
+      
+        #carouselExampleFade .carousel-caption button {
+          font-size: 1rem;
+        }
+      
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+          #carouselExampleFade {
+            height: 300px; /* Smaller height for mobile */
+          }
+      
+          #carouselExampleFade .carousel-caption h1 {
+            font-size: 1.8rem;
+          }
+      
+          #carouselExampleFade .carousel-caption p {
+            font-size: 1rem;
+          }
+      
+          #carouselExampleFade .carousel-caption {
+            max-width: 80%; /* Allow text to expand more on smaller screens */
+          }
+        }
+
+    
+      </style>
+      
+    <title>test boot</title>
+</head>
+<body>
+    <section>
+        <div id="carouselExampleFade" class="carousel slide carousel-fade">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="carousel-overlay"></div>
+              <img src="./img/img_1.jpg" class="d-block w-100" alt="...">
+              <div class="carousel-caption text-left">
+                <h1>Welcome to Our Carousel</h1>
+                <p>Beautiful Images with Highlighted Text</p>
+                <button class="btn btn-primary">Learn More</button>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="carousel-overlay"></div>
+              <img src="./img/img_2.jpg" class="d-block w-100" alt="...">
+              <div class="carousel-caption text-left">
+                <h1>Another Slide</h1>
+                <p>Images and Text in Harmony</p>
+                <button class="btn btn-primary">Discover</button>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="carousel-overlay"></div>
+              <img src="./img/img_3.jpg" class="d-block w-100" alt="...">
+              <div class="carousel-caption text-left">
+                <h1>Final Slide</h1>
+                <p>Engage with Stunning Slides</p>
+                <button class="btn btn-primary">Get Started</button>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>
+    
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
